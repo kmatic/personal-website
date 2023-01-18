@@ -18,6 +18,7 @@ const StyledNav = styled.nav`
 const StyledLinks = styled.div`
     font-size: var(--md);
     display: flex;
+    color: var(--white);
 
     ul {
         display: flex;

@@ -1,7 +1,11 @@
 import React from 'react';
 
 const Projects = () => {
-    return <div></div>;
+    return (
+        <section>
+            <h1 className="stylized-heading">Projects</h1>
+        </section>
+    );
 };
 
 export default Projects;

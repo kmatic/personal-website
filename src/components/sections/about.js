@@ -3,14 +3,29 @@ import styled from 'styled-components';
 import { StaticImage } from 'gatsby-plugin-image';
 
 const StyledSection = styled.section`
+    max-width: 900px;
+
     a {
         color: var(--blue);
     }
 `;
 
 const AboutContainer = styled.div`
-    // display: grid;
-    // grid-template-columns: 4fr 3fr;
+    display: grid;
+    grid-template-columns: 5fr 4fr;
+    gap: 40px;
+`;
+
+const StyledImg = styled.div`
+    .img {
+        border-radius: var(--border-radius);
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        transition: var(--transition);
+
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
 `;
 
 const About = () => {
@@ -55,9 +70,14 @@ const About = () => {
                         and playing video games.
                     </p>
                 </div>
-                <div>
-                    <StaticImage src="../../images/kris.jpg" alt="headshot" width={300} />
-                </div>
+                <StyledImg>
+                    <StaticImage
+                        src="../../images/me.jpg"
+                        alt="headshot"
+                        width={300}
+                        className="img"
+                    />
+                </StyledImg>
             </AboutContainer>
         </StyledSection>
     );

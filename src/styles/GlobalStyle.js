@@ -7,6 +7,7 @@ const variables = css`
         --blue-tint: rgba(36, 99, 234, 0.1);
         --slate: #1e293b;
         --light-slate: #94a3b8;
+        --gray: #374151;
 
         --xs: 12px;
         --sm: 14px;
@@ -43,17 +44,17 @@ const GlobalStyle = createGlobalStyle`
 
     html {
         scrollbar-width: thin;
-        scrollbar-color: black var(--white);
+        scrollbar-color: var(--light-slate) var(--slate);
     }
     ::-webkit-scrollbar {
         width: 12px;
     }
     ::-webkit-scrollbar-track {
-        background: var(--white);
+        background: var(--slate);
     }
     ::-webkit-scrollbar-thumb {
-        background-color: black;
-        border: 3px solid var(--white);
+        background-color: var(--light-slate);
+        border: 3px solid var(--slate);
         border-radius: 10px;
       }
 
@@ -75,14 +76,13 @@ const GlobalStyle = createGlobalStyle`
         min-height: 100vh;
         display: flex;
         flex-direction: column;
-        max-width: 1024px;
         margin: 0 auto;
+        max-width: 1024px;
     }
 
     main {
         margin: 0 auto;
         width: 100%;
-        max-width: 1600px;
         min-height: 100vh;
         padding: 200px 0px;
     }
@@ -160,6 +160,7 @@ const GlobalStyle = createGlobalStyle`
     }
 
     .stylized-heading {
+        margin: 0 0 30px 0;
         display: flex;
         align-items: center;
         width: 100%;
@@ -170,7 +171,7 @@ const GlobalStyle = createGlobalStyle`
             content: '';
             width: 300px;
             height: 1px;
-            background-color: var(--blue);
+            background-color: var(--gray);
             margin-left: 20px;
         }
     }
