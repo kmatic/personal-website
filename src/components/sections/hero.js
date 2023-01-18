@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const StyledSection = styled.section`
-    min-height: 100vh;
+    min-height: calc(100vh - var(--header-height));
     padding: 0;
     display: flex;
     flex-direction: column;

@@ -5,3 +5,4 @@ export { default as About } from './sections/about';
 export { default as Hero } from './sections/hero';
 export { default as Projects } from './sections/projects';
 export { default as Contact } from './Contact';
+export { default as Credit } from './Credit';

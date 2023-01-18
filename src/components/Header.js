@@ -2,7 +2,8 @@ import styled from 'styled-components';
 import React from 'react';
 
 const StyledHeader = styled.header`
-    padding: 30px 0;
+    height: var(--header-height);
+    padding: 40px 0 0 0;
 `;
 
 const StyledNav = styled.nav`

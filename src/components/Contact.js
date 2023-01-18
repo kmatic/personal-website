@@ -9,6 +9,7 @@ const StyledContact = styled.div`
     margin: 0;
     padding: 0;
     gap: 10px;
+    font-size: var(--xl);
 
     &:after {
         content: '';
@@ -32,6 +33,7 @@ const StyledContact = styled.div`
 const Wrapper = styled.div`
     position: fixed;
     bottom: 0;
+    right: auto;
 `;
 
 const Contact = () => {

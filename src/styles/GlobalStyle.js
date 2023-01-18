@@ -22,6 +22,8 @@ const variables = css`
         --border-radius: 5px;
 
         --transition: all 0.25s cubic-bezier(0.57, 0.15, 0.69, 1.25);
+
+        --header-height: 80px;
     }
 `;
 
