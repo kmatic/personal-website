@@ -20,6 +20,10 @@ module.exports = {
                         name: `Open Sans`,
                         file: `https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap`,
                     },
+                    {
+                        name: `Roboto Mono`,
+                        file: `https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;600;700&display=swap`,
+                    },
                 ],
             },
         },
