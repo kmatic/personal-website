@@ -2,6 +2,13 @@ import React from 'react';
 import styled from 'styled-components';
 
 const StyledSection = styled.section`
+    min-height: 100vh;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+
     p {
         max-width: 600px;
     }

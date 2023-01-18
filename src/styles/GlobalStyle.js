@@ -77,14 +77,14 @@ const GlobalStyle = createGlobalStyle`
         display: flex;
         flex-direction: column;
         margin: 0 auto;
-        max-width: 1024px;
+        max-width: 1200px;
     }
 
     main {
+        max-width: 1024px;
         margin: 0 auto;
         width: 100%;
         min-height: 100vh;
-        padding: 200px 0px;
     }
 
     section {

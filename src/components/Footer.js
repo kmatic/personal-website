@@ -11,6 +11,11 @@ const StyledFooter = styled.footer`
 
         > a {
             margin: 15px 0 15px 0;
+            transition: var(--transition);
+
+            &:hover {
+                color: var(--blue);
+            }
         }
     }
 `;
