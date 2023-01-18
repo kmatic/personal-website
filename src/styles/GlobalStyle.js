@@ -2,9 +2,11 @@ import { createGlobalStyle, css } from 'styled-components';
 
 const variables = css`
     :root {
-        --white: #c8defa;
-        --blue: #2563eb;
+        --white: white;
+        --blue: #38bdf8;
         --blue-tint: rgba(36, 99, 234, 0.1);
+        --slate: #1e293b;
+        --light-slate: #94a3b8;
 
         --xs: 12px;
         --sm: 14px;
@@ -62,8 +64,8 @@ const GlobalStyle = createGlobalStyle`
         overflow-x: hidden;
         -moz-osx-font-smoothing: grayscale;
         -webkit-font-smoothing: antialiased;
-        background-color: var(--white);
-        color: black;
+        background-color: var(--slate);
+        color: var(--light-slate);
         font-family: 'Open Sans', -apple-system, system-ui, sans-serif;
         font-size: var(--lg);
         line-height: 1.3;
@@ -139,10 +141,14 @@ const GlobalStyle = createGlobalStyle`
     h6 {
         margin: 0 0 10px 0;
         font-weight: 600;
-        color: black;
+        color: var(--white);
         line-height: 1.1;
     }
     
+    p {
+        margin: 0 0 15px 0;
+    }
+
     .big-heading {
         margin: 0;
         font-size: clamp(40px, 8vw, 80px);
