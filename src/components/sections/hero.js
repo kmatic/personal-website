@@ -9,6 +9,11 @@ const StyledSection = styled.section`
     h2 {
         font-family: var(--mono);
         font-weight: 400;
+        font-size: var(--lg);
+    }
+
+    h1 {
+        margin-left: -6px;
     }
 `;
 

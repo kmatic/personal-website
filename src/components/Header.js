@@ -11,7 +11,7 @@ const StyledNav = styled.nav`
     align-items: center;
 
     h2 {
-        font-size: var(--xl);
+        font-size: var(--lg);
     }
 `;
 
@@ -23,29 +23,6 @@ const StyledLinks = styled.div`
         display: flex;
         align-items: center;
         gap: 26px;
-
-        li {
-            display: inline-block;
-            position: relative;
-
-            &:after {
-                content: '';
-                position: absolute;
-                width: 100%;
-                transform: scaleX(0);
-                height: 1px;
-                bottom: 0;
-                left: 0;
-                background-color: var(--blue);
-                transform-origin: bottom right;
-                transition: transform 0.25s ease-out;
-            }
-
-            &:hover:after {
-                transform: scaleX(1);
-                transform-origin: bottom left;
-            }
-        }
     }
 `;
 
@@ -69,16 +46,16 @@ const Header = () => {
     return (
         <StyledHeader>
             <StyledNav>
-                <h2 className="blue">
+                <h2>
                     <a>KRISTOPHER MATIC</a>
                 </h2>
                 <StyledLinks>
                     <ul>
                         <li>
-                            <a>about</a>
+                            <a className="stylized-link">about</a>
                         </li>
                         <li>
-                            <a>projects</a>
+                            <a className="stylized-link">projects</a>
                         </li>
                     </ul>
                     <div>

@@ -1,10 +1,10 @@
 import { createGlobalStyle, css } from 'styled-components';
 
-export const variables = css`
+const variables = css`
     :root {
-        --white: #e6f1ff;
-        --blue: #1e3a8a;
-        --blue-tint: rgba(30, 58, 138, 0.1);
+        --white: #c8defa;
+        --blue: #2563eb;
+        --blue-tint: rgba(36, 99, 234, 0.1);
 
         --xs: 12px;
         --sm: 14px;
@@ -65,7 +65,7 @@ const GlobalStyle = createGlobalStyle`
         background-color: var(--white);
         color: black;
         font-family: 'Open Sans', -apple-system, system-ui, sans-serif;
-        font-size: var(--xl);
+        font-size: var(--lg);
         line-height: 1.3;
     }
 
@@ -93,10 +93,30 @@ const GlobalStyle = createGlobalStyle`
     a {
         text-decoration: none;
         cursor: pointer;
+        color: inherit;
 
-        // &:visited {
-        //     color: inherit
-        // }
+        &.stylized-link {
+            display: inline-block;
+            position: relative;
+
+            &:after {
+                content: '';
+                position: absolute;
+                width: 100%;
+                transform: scaleX(0);
+                height: 1px;
+                bottom: 0;
+                left: 0;
+                background-color: var(--blue);
+                transform-origin: bottom right;
+                transition: transform 0.25s ease-out;
+            }
+
+            &:hover:after {
+                transform: scaleX(1);
+                transform-origin: bottom left;
+            }
+        }
     }
 
     ul {
@@ -131,6 +151,22 @@ const GlobalStyle = createGlobalStyle`
     .medium-heading {
         margin: 0;
         font-size: clamp(40px, 8vw, 60px);
+    }
+
+    .stylized-heading {
+        display: flex;
+        align-items: center;
+        width: 100%;
+
+        &:after {
+            display: block;
+            position: relative;
+            content: '';
+            width: 300px;
+            height: 1px;
+            background-color: var(--blue);
+            margin-left: 20px;
+        }
     }
 
     .blue {
