@@ -1,7 +1,7 @@
 import React from 'react';
 
-const Footer = () => {
+const Projects = () => {
     return <div></div>;
 };
 
-export default Footer;
+export default Projects;
