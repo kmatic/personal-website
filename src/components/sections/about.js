@@ -33,7 +33,7 @@ const About = () => {
         <StyledSection>
             <h1 className="stylized-heading">About Me</h1>
             <AboutContainer>
-                <div>
+                <div id="about">
                     <p>
                         I initially have a background in mechanical engineering where I first gained
                         experience and interest in software development by writing data
@@ -74,7 +74,7 @@ const About = () => {
                     <StaticImage
                         src="../../images/me.jpg"
                         alt="headshot"
-                        width={300}
+                        width={350}
                         className="img"
                     />
                 </StyledImg>

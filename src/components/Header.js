@@ -25,6 +25,10 @@ const StyledLinks = styled.div`
         display: flex;
         align-items: center;
         gap: 26px;
+
+        > li:hover {
+            color: var(--blue);
+        }
     }
 `;
 
@@ -49,15 +53,19 @@ const Header = () => {
         <StyledHeader>
             <StyledNav>
                 <h2>
-                    <a>KRISTOPHER MATIC</a>
+                    <a href="/">KRISTOPHER MATIC</a>
                 </h2>
                 <StyledLinks>
                     <ul>
                         <li>
-                            <a className="stylized-link">about</a>
+                            <a href="#about" className="stylized-link">
+                                about
+                            </a>
                         </li>
                         <li>
-                            <a className="stylized-link">projects</a>
+                            <a href="#projects" className="stylized-link">
+                                projects
+                            </a>
                         </li>
                     </ul>
                     <div>
