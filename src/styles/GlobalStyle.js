@@ -4,8 +4,9 @@ const variables = css`
     :root {
         --white: white;
         --blue: #38bdf8;
-        --blue-tint: rgba(36, 99, 234, 0.1);
+        --blue-highlight: rgba(56, 189, 248, 0.2);
         --slate: #1e293b;
+        --lighter-slate: #334155;
         --light-slate: #94a3b8;
         --gray: #374151;
 
@@ -141,7 +142,7 @@ const GlobalStyle = createGlobalStyle`
     h4,
     h5,
     h6 {
-        margin: 0 0 10px 0;
+        margin: 0 0 15px 0;
         font-weight: 600;
         color: var(--white);
         line-height: 1.1;

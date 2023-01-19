@@ -43,7 +43,7 @@ const ResumeLink = styled.a`
 
     &:hover,
     &:active {
-        background-color: var(--blue-tint);
+        background-color: var(--blue-highlight);
         outline: none;
     }
 `;

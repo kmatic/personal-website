@@ -19,7 +19,7 @@ const AboutContainer = styled.div`
 const StyledImg = styled.div`
     .img {
         border-radius: var(--border-radius);
-        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
         transition: var(--transition);
 
         &:hover {

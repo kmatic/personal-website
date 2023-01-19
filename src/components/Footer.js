@@ -3,14 +3,18 @@ import styled from 'styled-components';
 import { FiGithub } from 'react-icons/fi';
 
 const StyledFooter = styled.footer`
-    margin-top: 0 auto;
+    margin-top: auto;
+    margin-bottom: 15px;
 
     div {
         display: flex;
-        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        font-size: var(--sm);
+        gap: 5px;
 
         > a {
-            margin: 15px 0 15px 0;
+            display: inline;
             transition: var(--transition);
 
             &:hover {
@@ -26,6 +30,10 @@ const Footer = () => {
             <div>
                 <a href="https://github.com/kmatic" target="_blank" rel="noopener noreferrer">
                     kmatic <FiGithub />
+                </a>
+
+                <a href="https://github.com/bchiang7/v4" target="_blank" rel="noopener noreferrer">
+                    inspired by bchiang7
                 </a>
             </div>
         </StyledFooter>
