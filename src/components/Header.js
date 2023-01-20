@@ -1,5 +1,7 @@
 import styled from 'styled-components';
-import React from 'react';
+import React, { useState, useRef } from 'react';
+import { RxHamburgerMenu } from 'react-icons/rx';
+import useOutsideChecker from './hooks/useOutsideClick';
 
 const StyledHeader = styled.header`
     height: var(--header-height);
@@ -11,7 +13,7 @@ const StyledNav = styled.nav`
     justify-content: space-between;
     align-items: center;
 
-    > a {
+    & > a {
         font-size: var(--lg);
         color: var(--white);
     }
@@ -27,9 +29,13 @@ const StyledLinks = styled.div`
         align-items: center;
         gap: 26px;
 
-        > li:hover {
+        & > li:hover {
             color: var(--blue);
         }
+    }
+
+    @media (max-width: 768px) {
+        display: none;
     }
 `;
 
@@ -42,13 +48,52 @@ const ResumeLink = styled.a`
     transition: var(--transition);
     margin-left: 26px;
 
-    &:hover,
-    &:active {
+    &:hover {
         background-color: var(--blue-highlight);
     }
 `;
 
+const Hamburger = styled.div`
+    display: none;
+    position: relative;
+    color: var(--white);
+
+    .icon {
+        font-size: var(--xxl);
+        cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+        display: block;
+    }
+`;
+
+const HamburgerMenu = styled.div`
+    position: absolute;
+    z-index: 10;
+    bottom: -var(--ham-menu-height);
+    right: 0;
+    height: var(--ham-menu-height);
+    background-color: var(--lighter-slate);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 2px 15px;
+    border-radius: var(--border-radius);
+    padding: 25px;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    font-size: var(--md);
+
+    a:hover {
+        color: var(--blue);
+    }
+`;
+
 const Header = () => {
+    const [navOpen, setNavOpen] = useState(false);
+
+    const navRef = useRef(null);
+    useOutsideChecker(navRef, setNavOpen);
+
     return (
         <StyledHeader>
             <StyledNav>
@@ -76,6 +121,31 @@ const Header = () => {
                         </ResumeLink>
                     </div>
                 </StyledLinks>
+                <Hamburger ref={navRef}>
+                    <div className="icon" onClick={() => setNavOpen((prev) => !prev)}>
+                        <RxHamburgerMenu />
+                    </div>
+                    <HamburgerMenu
+                        style={navOpen ? { display: 'flex' } : { display: 'none' }}
+                        onClick={() => setNavOpen(false)}
+                    >
+                        <a href="#about" className="stylized-link">
+                            about
+                        </a>
+
+                        <a href="#projects" className="stylized-link">
+                            projects
+                        </a>
+                        <a
+                            href="https://www.google.com/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="stylized-link"
+                        >
+                            resume
+                        </a>
+                    </HamburgerMenu>
+                </Hamburger>
             </StyledNav>
         </StyledHeader>
     );

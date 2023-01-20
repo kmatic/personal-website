@@ -25,6 +25,9 @@ const variables = css`
         --transition: all 0.25s cubic-bezier(0.57, 0.15, 0.69, 1.25);
 
         --header-height: 80px;
+
+        --ham-menu-height: 125px;
+        --ham-menu-width: 125px;
     }
 `;
 

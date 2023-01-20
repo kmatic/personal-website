@@ -15,7 +15,6 @@ const StyledSection = styled.section`
     }
 
     a {
-        color: var(--blue);
         font-size: var(--md);
         font-family: var(--mono);
         color: var(--blue);
@@ -24,8 +23,7 @@ const StyledSection = styled.section`
         padding: 10px 12px;
         transition: var(--transition);
 
-        &:hover,
-        &:active {
+        &:hover {
             background-color: var(--blue-highlight);
         }
     }
