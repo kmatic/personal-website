@@ -30,10 +30,10 @@ const StyledImg = styled.div`
 
 const About = () => {
     return (
-        <StyledSection>
+        <StyledSection id="about">
             <h1 className="stylized-heading">About Me</h1>
             <AboutContainer>
-                <div id="about">
+                <div>
                     <p>
                         I initially have a background in mechanical engineering where I first gained
                         experience and interest in software development by writing data

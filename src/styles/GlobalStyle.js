@@ -43,6 +43,11 @@ const GlobalStyle = createGlobalStyle`
         box-sizing: inherit;
     }
 
+    ::selection {
+        background-color: var(--blue);
+        color: var(--white);
+    }
+
     /* Scrollbar */
 
     html {
@@ -80,14 +85,15 @@ const GlobalStyle = createGlobalStyle`
         display: flex;
         flex-direction: column;
         margin: 0 auto;
-        max-width: 1200px;
+        max-width: 1400px;
+        padding: 0px 50px;
     }
 
     main {
-        max-width: 1024px;
         margin: 0 auto;
         width: 100%;
         min-height: 100vh;
+        padding: 0px 100px;
     }
 
     section {
