@@ -33,6 +33,7 @@ const StyledLinks = styled.div`
 `;
 
 const ResumeLink = styled.a`
+    font-family: var(--mono);
     color: var(--blue);
     border: 1px solid;
     border-color: var(--blue);

@@ -62,12 +62,13 @@ const Links = styled.div`
 const Technologies = styled.div`
     ul {
         display: flex;
-        gap: 6px;
+        gap: 5px;
         flex-wrap: wrap;
 
         > li {
+            font-family: var(--mono);
             font-size: var(--sm);
-            padding: 2px 6px;
+            padding: 2px 5px;
             background-color: var(--slate);
             color: var(--blue);
             border-radius: var(--border-radius);
