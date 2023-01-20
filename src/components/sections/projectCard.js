@@ -16,7 +16,7 @@ const Card = styled.div`
         box-shadow: rgba(0, 0, 0, 0.35) 0px 1px 15px;
     }
 
-    :hover {
+    &:hover {
         transform: scale(1.02);
     }
 
@@ -30,18 +30,14 @@ const Card = styled.div`
 `;
 
 const Info = styled.div`
-    padding: 24px;
+    padding: 26px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 300px;
+    min-height: 300px;
 
     h2 {
         font-size: var(--xxl);
-    }
-
-    @media (max-width: 768px) {
-        min-height: 100%;
     }
 `;
 
@@ -51,7 +47,7 @@ const Technologies = styled.div`
         gap: 5px;
         flex-wrap: wrap;
 
-        > li {
+        & > li {
             font-family: var(--mono);
             font-size: var(--sm);
             padding: 2px 5px;

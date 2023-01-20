@@ -13,7 +13,7 @@ const StyledFooter = styled.footer`
         font-size: var(--sm);
         gap: 5px;
 
-        > a {
+        & > a {
             display: inline;
             transition: var(--transition);
 

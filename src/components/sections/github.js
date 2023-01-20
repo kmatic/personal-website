@@ -39,7 +39,9 @@ const Github = () => {
                 this website updated. If you would like to contact me feel free to reach out at any
                 of my socials.
             </p>
-            <a>view my github</a>
+            <a href="https://github.com/kmatic" target="_blank" rel="noopener noreferrer">
+                view my github
+            </a>
         </StyledSection>
     );
 };
