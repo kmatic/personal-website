@@ -11,8 +11,9 @@ const StyledNav = styled.nav`
     justify-content: space-between;
     align-items: center;
 
-    h2 {
+    > a {
         font-size: var(--lg);
+        color: var(--white);
     }
 `;
 
@@ -53,9 +54,7 @@ const Header = () => {
     return (
         <StyledHeader>
             <StyledNav>
-                <h2>
-                    <a href="/">KRISTOPHER MATIC</a>
-                </h2>
+                <a href="/">KRISTOPHER MATIC</a>
                 <StyledLinks>
                     <ul>
                         <li>
