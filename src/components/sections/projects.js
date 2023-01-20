@@ -5,6 +5,8 @@ import { FiGithub, FiPlusSquare } from 'react-icons/fi';
 
 const ProjectsContainer = styled.div`
     display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
 `;
 
 const Card = styled.div`
@@ -12,6 +14,7 @@ const Card = styled.div`
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     border-radius: var(--border-radius);
     transition: var(--transition);
+    width: 400px;
 
     .img {
         border-top-left-radius: var(--border-radius);
@@ -26,7 +29,7 @@ const Card = styled.div`
 
 const Info = styled.div`
     padding: 24px 24px;
-    width: 400px;
+
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -64,7 +67,7 @@ const Technologies = styled.div`
 
         > li {
             font-size: var(--sm);
-            padding: 2px 8px;
+            padding: 2px 6px;
             background-color: var(--slate);
             color: var(--blue);
             border-radius: var(--border-radius);
@@ -76,12 +79,30 @@ const Projects = () => {
     const projectsList = [
         {
             name: 'CuisineConnoisseurs',
-            technologies: ['React', 'Express', 'Tailwind CSS', 'MongoDB', 'AWS S3'],
+            technologies: ['React', 'Express', 'Tailwind', 'MongoDB', 'AWS S3'],
             img: '../../images/projects/cuisineconnoisseurs.png',
             description:
                 'A web app for rating restaurants. Rate your meals, provide detailed reviews, and share great restaurants. Follow others and interact with their posts.',
             github: 'https://github.com/kmatic/cuisine-connoisseurs-client',
             live: 'https://cuisineconnoisseurs.onrender.com/',
+        },
+        {
+            name: 'Todo-list',
+            technologies: ['React', 'styled-components', 'Redux', 'Firebase'],
+            img: '../../images/projects/todolist.png',
+            description:
+                'A todo-list web app built with React and Redux for state management. Uses firebase auth and firestore for the BaaS. Create different projects and modify todos.',
+            github: 'https://github.com/kmatic/todo-list-react',
+            live: 'https://kmatic.github.io/todo-list-react/',
+        },
+        {
+            name: 'Personal Website',
+            technologies: ['Gatsby', 'React', 'styled-components'],
+            img: '../../images/projects/personalwebsite.png',
+            description:
+                'My personal website to showcase my projects and information. Bootstrapped with Gatsby to make use of static site generation benefits.',
+            github: 'https://github.com/kmatic/todo-list-react',
+            live: 'https://kmatic.github.io/todo-list-react/',
         },
     ];
 
@@ -89,8 +110,8 @@ const Projects = () => {
         <section id="projects">
             <h1 className="stylized-heading">Projects</h1>
             <ProjectsContainer>
-                {projectsList.map((project) => (
-                    <Card>
+                {projectsList.map((project, idx) => (
+                    <Card key={idx}>
                         <a href={project.github} target="_blank" rel="noopener noreferrer">
                             <StaticImage
                                 src="../../images/projects/cuisineconnoisseurs.png"
