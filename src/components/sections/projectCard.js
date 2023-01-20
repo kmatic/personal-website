@@ -19,6 +19,14 @@ const Card = styled.div`
     :hover {
         transform: scale(1.02);
     }
+
+    @media (max-width: 768px) {
+        width: 100%;
+
+        > a {
+            display: none;
+        }
+    }
 `;
 
 const Info = styled.div`
@@ -30,6 +38,27 @@ const Info = styled.div`
 
     h2 {
         font-size: var(--xxl);
+    }
+
+    @media (max-width: 768px) {
+        min-height: 100%;
+    }
+`;
+
+const Technologies = styled.div`
+    ul {
+        display: flex;
+        gap: 5px;
+        flex-wrap: wrap;
+
+        > li {
+            font-family: var(--mono);
+            font-size: var(--sm);
+            padding: 2px 5px;
+            background-color: var(--slate);
+            color: var(--blue);
+            border-radius: var(--border-radius);
+        }
     }
 `;
 
@@ -48,23 +77,6 @@ const Links = styled.div`
 
         &:hover {
             color: var(--blue);
-        }
-    }
-`;
-
-const Technologies = styled.div`
-    ul {
-        display: flex;
-        gap: 5px;
-        flex-wrap: wrap;
-
-        > li {
-            font-family: var(--mono);
-            font-size: var(--sm);
-            padding: 2px 5px;
-            background-color: var(--slate);
-            color: var(--blue);
-            border-radius: var(--border-radius);
         }
     }
 `;

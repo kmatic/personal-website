@@ -36,8 +36,7 @@ const StyledLinks = styled.div`
 const ResumeLink = styled.a`
     font-family: var(--mono);
     color: var(--blue);
-    border: 1px solid;
-    border-color: var(--blue);
+    border: 1px solid var(--blue);
     border-radius: var(--border-radius);
     padding: 6px 10px;
     transition: var(--transition);
@@ -46,7 +45,6 @@ const ResumeLink = styled.a`
     &:hover,
     &:active {
         background-color: var(--blue-highlight);
-        outline: none;
     }
 `;
 

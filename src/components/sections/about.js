@@ -3,10 +3,16 @@ import styled from 'styled-components';
 import { StaticImage } from 'gatsby-plugin-image';
 
 const StyledSection = styled.section`
-    max-width: 900px;
+    max-width: 1000px;
 
     a {
         color: var(--blue);
+    }
+
+    @media (max-width: 480px) {
+        p {
+            font-size: var(--md);
+        }
     }
 `;
 
@@ -14,6 +20,11 @@ const AboutContainer = styled.div`
     display: grid;
     grid-template-columns: 5fr 4fr;
     gap: 40px;
+
+    @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
 `;
 
 const StyledImg = styled.div`
@@ -25,6 +36,10 @@ const StyledImg = styled.div`
         &:hover {
             transform: scale(1.1);
         }
+    }
+
+    @media (max-width: 768px) {
+        justify-self: center;
     }
 `;
 
@@ -74,7 +89,7 @@ const About = () => {
                     <StaticImage
                         src="../../images/me.jpg"
                         alt="headshot"
-                        width={350}
+                        width={325}
                         className="img"
                     />
                 </StyledImg>

@@ -6,6 +6,7 @@ const ProjectsContainer = styled.div`
     display: flex;
     gap: 40px;
     flex-wrap: wrap;
+    justify-content: space-between;
 `;
 
 const Projects = () => {

@@ -4,7 +4,6 @@ import { RxDoubleArrowDown } from 'react-icons/rx';
 
 const StyledSection = styled.section`
     min-height: calc(100vh - var(--header-height));
-    padding: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -21,7 +20,15 @@ const StyledSection = styled.section`
     }
 
     h1 {
-        margin: 0 0 15px -6px;
+        margin: 0 0 15px;
+        font-size: clamp(35px, 8vw, 80px);
+    }
+
+    @media (max-width: 480px) {
+        p,
+        h2 {
+            font-size: var(--md);
+        }
     }
 `;
 
@@ -46,13 +53,17 @@ const AnimationDiv = styled.div`
     height: 40px;
     animation: ${bouncing} 2s linear infinite;
     font-size: var(--xxl);
+
+    @media (max-width: 480px) {
+        font-size: var(--sm);
+    }
 `;
 
 const Hero = () => {
     return (
         <StyledSection>
             <h2 className="blue">Hey, I'm</h2>
-            <h1 className="big-heading">Kristopher Matic.</h1>
+            <h1>Kristopher Matic.</h1>
             <p>
                 I'm a mechanical engineer turned full-stack developer from Vancouver, Canada.
                 Currently, I'm focused on further improving my skills in my chosen tech stack

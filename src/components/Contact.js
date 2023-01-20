@@ -34,6 +34,10 @@ const Wrapper = styled.div`
     position: fixed;
     bottom: 0;
     right: auto;
+
+    @media (max-width: 480px) {
+        display: none;
+    }
 `;
 
 const Contact = () => {

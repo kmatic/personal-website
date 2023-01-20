@@ -1,5 +1,4 @@
 import GlobalStyle from '../styles/GlobalStyle';
-import styled from 'styled-components';
 import React from 'react';
 import { Header, Footer, Contact } from '../components';
 
@@ -14,7 +13,5 @@ const Layout = ({ children }) => {
         </div>
     );
 };
-
-const LayoutDiv = styled.div``;
 
 export default Layout;
