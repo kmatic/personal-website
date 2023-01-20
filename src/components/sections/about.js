@@ -18,7 +18,7 @@ const StyledSection = styled.section`
 
 const AboutContainer = styled.div`
     display: grid;
-    grid-template-columns: 5fr 4fr;
+    grid-template-columns: 8fr 7fr;
     gap: 40px;
 
     @media (max-width: 768px) {
@@ -28,6 +28,8 @@ const AboutContainer = styled.div`
 `;
 
 const StyledImg = styled.div`
+    align-self: center;
+
     .img {
         border-radius: var(--border-radius);
         box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -87,9 +89,9 @@ const About = () => {
                 </div>
                 <StyledImg>
                     <StaticImage
-                        src="../../images/me.jpg"
+                        src="../../images/kris.jpg"
                         alt="headshot"
-                        width={325}
+                        width={375}
                         className="img"
                     />
                 </StyledImg>
