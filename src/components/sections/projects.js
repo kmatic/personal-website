@@ -3,11 +3,20 @@ import styled from 'styled-components';
 import ProjectCard from './projectCard';
 import { graphql, useStaticQuery } from 'gatsby';
 
+const StyledSection = styled.section`
+    max-width: 1150px;
+    margin: 0 auto;
+`;
+
 const ProjectsContainer = styled.div`
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 40px;
-    flex-wrap: wrap;
-    justify-content: space-between;
+
+    @media (max-width: 768px) {
+        display: flex;
+        flex-direction: column;
+    }
 `;
 
 const Projects = () => {
@@ -28,21 +37,21 @@ const Projects = () => {
                             }
                         }
                     }
-                    excerpt
+                    body
                 }
             }
         }
     `);
 
     return (
-        <section id="projects">
+        <StyledSection id="projects">
             <h1 className="stylized-heading">Projects</h1>
             <ProjectsContainer>
                 {data.allMdx.nodes.map((project) => (
                     <ProjectCard key={project.frontmatter.name} project={project} />
                 ))}
             </ProjectsContainer>
-        </section>
+        </StyledSection>
     );
 };
 

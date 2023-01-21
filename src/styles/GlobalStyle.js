@@ -88,7 +88,7 @@ const GlobalStyle = createGlobalStyle`
         display: flex;
         flex-direction: column;
         margin: 0 auto;
-        padding: 0px 40px;
+        padding: 0px 100px;
 
         @media (max-width: 1080px) {
             padding: 0px 30px;
@@ -223,7 +223,7 @@ const GlobalStyle = createGlobalStyle`
         color: var(--blue);
     }
 
-    // transition
+    // transitions
 
     .fade-enter {
         opacity: 0;

@@ -49,23 +49,27 @@ const Contact = () => {
     const linkedin = 'https://www.linkedin.com/in/kristopher-matic/';
 
     useEffect(() => {
-        setIsMounted(true);
+        setTimeout(() => {
+            setIsMounted(true);
+        }, '100');
     }, []);
     return (
         <Wrapper>
-            <CSSTransition in={isMounted} timeout={2000} classNames="fade">
-                <StyledContact>
-                    <a href={github} target="_blank" rel="noopener noreferrer">
-                        <FiGithub />
-                    </a>
-                    <a href={linkedin} target="_blank" rel="noopener noreferrer">
-                        <FiLinkedin />
-                    </a>
-                    <a href={`mailto:${email}`} target="_blank" rel="noopener noreferrer">
-                        <FiMail />
-                    </a>
-                </StyledContact>
-            </CSSTransition>
+            {isMounted && (
+                <CSSTransition in={isMounted} timeout={200} classNames="fade">
+                    <StyledContact>
+                        <a href={github} target="_blank" rel="noopener noreferrer">
+                            <FiGithub />
+                        </a>
+                        <a href={linkedin} target="_blank" rel="noopener noreferrer">
+                            <FiLinkedin />
+                        </a>
+                        <a href={`mailto:${email}`} target="_blank" rel="noopener noreferrer">
+                            <FiMail />
+                        </a>
+                    </StyledContact>
+                </CSSTransition>
+            )}
         </Wrapper>
     );
 };

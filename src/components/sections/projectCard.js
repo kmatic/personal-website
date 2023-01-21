@@ -8,14 +8,14 @@ const Card = styled.div`
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     border-radius: var(--border-radius);
     transition: var(--transition);
-    width: 400px;
+    width: 100%;
     overflow-wrap: break-word;
 
     .img {
         border-top-left-radius: var(--border-radius);
         border-top-right-radius: var(--border-radius);
         box-shadow: rgba(0, 0, 0, 0.35) 0px 1px 15px;
-        height: 240px;
+        width: 100%;
     }
 
     &:hover {
@@ -39,7 +39,7 @@ const Info = styled.div`
     min-height: 300px;
 
     h2 {
-        font-size: var(--xxl);
+        font-size: var(--xl);
     }
 `;
 
@@ -80,7 +80,7 @@ const Links = styled.div`
 `;
 
 const ProjectCard = ({ project }) => {
-    const { excerpt, frontmatter } = project;
+    const { body, frontmatter } = project;
     const image = getImage(frontmatter.img);
 
     return (
@@ -99,7 +99,7 @@ const ProjectCard = ({ project }) => {
                         </ul>
                     </Technologies>
                     <Description>
-                        <p>{excerpt}</p>
+                        <p>{body}</p>
                     </Description>
                 </div>
                 <div>

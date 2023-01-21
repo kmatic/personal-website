@@ -9,6 +9,7 @@ const StyledSection = styled.section`
     flex-direction: column;
     justify-content: center;
     position: relative;
+    max-width: 1150px;
 
     p {
         max-width: 600px;
@@ -68,24 +69,28 @@ const Hero = () => {
     });
     return (
         <StyledSection>
-            <CSSTransition in={isMounted} timeout={2000} classNames="fade-right">
-                <div>
-                    <h2 className="blue">Hey, I'm</h2>
-                    <h1>Kristopher Matic.</h1>
-                    <p>
-                        I'm a mechanical engineer turned full-stack developer from Vancouver,
-                        Canada. Currently, I'm focused on further improving my skills in my chosen
-                        tech stack (MERN).
-                    </p>
-                </div>
-            </CSSTransition>
-            <CSSTransition in={isMounted} timeout={2000} classNames="fade">
-                <AnimationDiv>
-                    <a href="#about">
-                        <RxDoubleArrowDown />
-                    </a>
-                </AnimationDiv>
-            </CSSTransition>
+            {isMounted && (
+                <>
+                    <CSSTransition in={isMounted} timeout={200} classNames="fade-right">
+                        <div>
+                            <h2 className="blue">Hey, I'm</h2>
+                            <h1>Kristopher Matic.</h1>
+                            <p>
+                                I'm a mechanical engineer turned full-stack developer from
+                                Vancouver, Canada. Currently, I'm focused on further improving my
+                                skills in my chosen tech stack (MERN).
+                            </p>
+                        </div>
+                    </CSSTransition>
+                    <CSSTransition in={isMounted} timeout={2000} classNames="fade">
+                        <AnimationDiv>
+                            <a href="#about">
+                                <RxDoubleArrowDown />
+                            </a>
+                        </AnimationDiv>
+                    </CSSTransition>
+                </>
+            )}
         </StyledSection>
     );
 };
