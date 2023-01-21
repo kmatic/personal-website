@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { StaticImage } from 'gatsby-plugin-image';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import { FiGithub, FiPlusSquare } from 'react-icons/fi';
 
 const Card = styled.div`
@@ -9,11 +9,13 @@ const Card = styled.div`
     border-radius: var(--border-radius);
     transition: var(--transition);
     width: 400px;
+    overflow-wrap: break-word;
 
     .img {
         border-top-left-radius: var(--border-radius);
         border-top-right-radius: var(--border-radius);
         box-shadow: rgba(0, 0, 0, 0.35) 0px 1px 15px;
+        height: 240px;
     }
 
     &:hover {
@@ -78,36 +80,34 @@ const Links = styled.div`
 `;
 
 const ProjectCard = ({ project }) => {
+    const { excerpt, frontmatter } = project;
+    const image = getImage(frontmatter.img);
+
     return (
         <Card>
-            <a href={project.github} target="_blank" rel="noopener noreferrer">
-                <StaticImage
-                    src="../../images/projects/cuisineconnoisseurs.png"
-                    width={400}
-                    className="img"
-                    alt="preview"
-                />
+            <a href={frontmatter.github} target="_blank" rel="noopener noreferrer">
+                <GatsbyImage image={image} className="img" alt={frontmatter.alt} />
             </a>
             <Info>
                 <div>
-                    <h2>{project.name}</h2>
+                    <h2>{frontmatter.name}</h2>
                     <Technologies>
                         <ul>
-                            {project.technologies.map((tech) => (
+                            {frontmatter.technologies.map((tech) => (
                                 <li>{tech}</li>
                             ))}
                         </ul>
                     </Technologies>
                     <Description>
-                        <p>{project.description}</p>
+                        <p>{excerpt}</p>
                     </Description>
                 </div>
                 <div>
                     <Links>
-                        <a href={project.github} target="_blank" rel="noopener noreferrer">
+                        <a href={frontmatter.github} target="_blank" rel="noopener noreferrer">
                             <FiGithub />
                         </a>
-                        <a href={project.live} target="_blank" rel="noopener noreferrer">
+                        <a href={frontmatter.live} target="_blank" rel="noopener noreferrer">
                             <FiPlusSquare />
                         </a>
                     </Links>

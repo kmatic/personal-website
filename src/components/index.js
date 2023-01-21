@@ -6,3 +6,4 @@ export { default as Hero } from './sections/hero';
 export { default as Projects } from './sections/projects';
 export { default as Github } from './sections/github';
 export { default as Contact } from './Contact';
+export { default as Seo } from './seo';

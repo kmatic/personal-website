@@ -3,13 +3,15 @@
  */
 module.exports = {
     siteMetadata: {
-        title: `personal-website`,
+        title: `Kristopher Matic`,
         siteUrl: `https://www.yourdomain.tld`,
     },
     plugins: [
         'gatsby-plugin-styled-components',
         'gatsby-plugin-image',
         'gatsby-plugin-sharp',
+        'gatsby-plugin-mdx',
+        'gatsby-transformer-sharp',
         {
             resolve: `gatsby-omni-font-loader`,
             options: {
@@ -31,6 +33,13 @@ module.exports = {
             resolve: 'gatsby-plugin-manifest',
             options: {
                 icon: 'src/images/favicon.png', // Relative to the project's root folder
+            },
+        },
+        {
+            resolve: 'gatsby-source-filesystem',
+            options: {
+                name: `projects`,
+                path: `${__dirname}/content/projects`,
             },
         },
     ],

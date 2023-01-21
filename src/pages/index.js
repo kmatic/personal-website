@@ -1,5 +1,5 @@
 import React from 'react';
-import { Layout, Hero, About, Projects, Github } from '../components';
+import { Layout, Hero, About, Projects, Github, Seo } from '../components';
 
 const IndexPage = () => {
     return (
@@ -14,6 +14,6 @@ const IndexPage = () => {
     );
 };
 
-export const Head = () => <title>Kristopher Matic</title>;
+export const Head = () => <Seo />;
 
 export default IndexPage;

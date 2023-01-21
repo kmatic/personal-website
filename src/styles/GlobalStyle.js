@@ -90,6 +90,10 @@ const GlobalStyle = createGlobalStyle`
         margin: 0 auto;
         padding: 0px 40px;
 
+        @media (max-width: 1080px) {
+            padding: 0px 30px;
+        }
+
         @media (max-width: 768px) {
             padding: 0 15px 0 25px;
         }
@@ -104,7 +108,11 @@ const GlobalStyle = createGlobalStyle`
         margin: 0 auto;
         width: 100%;
         min-height: 100vh;
-        padding: 0px 60px;
+        padding: 0px 100px;
+
+        @media (max-width: 1080px) {
+            padding: 0px 60px;
+        }
 
         @media (max-width: 768px) {
             padding: 0 25px 0 50px;
