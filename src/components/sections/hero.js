@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import styled, { keyframes } from 'styled-components';
 import { RxDoubleArrowDown } from 'react-icons/rx';
-import { CSSTransition } from 'react-transition-group';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 const StyledSection = styled.section`
     min-height: calc(100vh - var(--header-height));
@@ -69,28 +69,30 @@ const Hero = () => {
     });
     return (
         <StyledSection>
-            {isMounted && (
-                <>
-                    <CSSTransition in={isMounted} timeout={200} classNames="fade-right">
-                        <div>
-                            <h2 className="blue">Hey, I'm</h2>
-                            <h1>Kristopher Matic.</h1>
-                            <p>
-                                I'm a mechanical engineer turned full-stack developer from
-                                Vancouver, Canada. Currently, I'm focused on further improving my
-                                skills in my chosen tech stack (MERN).
-                            </p>
-                        </div>
-                    </CSSTransition>
-                    <CSSTransition in={isMounted} timeout={2000} classNames="fade">
-                        <AnimationDiv>
-                            <a href="#about">
-                                <RxDoubleArrowDown />
-                            </a>
-                        </AnimationDiv>
-                    </CSSTransition>
-                </>
-            )}
+            <TransitionGroup component={null}>
+                {isMounted && (
+                    <>
+                        <CSSTransition in={isMounted} timeout={1500} classNames="fade-right">
+                            <div>
+                                <h2 className="blue">Hey, I'm</h2>
+                                <h1>Kristopher Matic.</h1>
+                                <p>
+                                    I'm a mechanical engineer turned full-stack developer from
+                                    Vancouver, Canada. Currently, I'm focused on further improving
+                                    my skills in my chosen tech stack (MERN).
+                                </p>
+                            </div>
+                        </CSSTransition>
+                        <CSSTransition in={isMounted} timeout={1500} classNames="fade">
+                            <AnimationDiv>
+                                <a href="#about">
+                                    <RxDoubleArrowDown />
+                                </a>
+                            </AnimationDiv>
+                        </CSSTransition>
+                    </>
+                )}
+            </TransitionGroup>
         </StyledSection>
     );
 };

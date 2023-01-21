@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { FiGithub, FiLinkedin, FiMail } from 'react-icons/fi';
-import { CSSTransition } from 'react-transition-group';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 const StyledContact = styled.div`
     display: flex;
@@ -49,27 +49,27 @@ const Contact = () => {
     const linkedin = 'https://www.linkedin.com/in/kristopher-matic/';
 
     useEffect(() => {
-        setTimeout(() => {
-            setIsMounted(true);
-        }, '100');
+        setIsMounted(true);
     }, []);
     return (
         <Wrapper>
-            {isMounted && (
-                <CSSTransition in={isMounted} timeout={200} classNames="fade">
-                    <StyledContact>
-                        <a href={github} target="_blank" rel="noopener noreferrer">
-                            <FiGithub />
-                        </a>
-                        <a href={linkedin} target="_blank" rel="noopener noreferrer">
-                            <FiLinkedin />
-                        </a>
-                        <a href={`mailto:${email}`} target="_blank" rel="noopener noreferrer">
-                            <FiMail />
-                        </a>
-                    </StyledContact>
-                </CSSTransition>
-            )}
+            <TransitionGroup component={null}>
+                {isMounted && (
+                    <CSSTransition timeout={1500} classNames="fade">
+                        <StyledContact>
+                            <a href={github} target="_blank" rel="noopener noreferrer">
+                                <FiGithub />
+                            </a>
+                            <a href={linkedin} target="_blank" rel="noopener noreferrer">
+                                <FiLinkedin />
+                            </a>
+                            <a href={`mailto:${email}`} target="_blank" rel="noopener noreferrer">
+                                <FiMail />
+                            </a>
+                        </StyledContact>
+                    </CSSTransition>
+                )}
+            </TransitionGroup>
         </Wrapper>
     );
 };
