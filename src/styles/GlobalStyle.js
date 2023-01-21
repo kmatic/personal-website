@@ -51,7 +51,7 @@ const GlobalStyle = createGlobalStyle`
         color: var(--white);
     }
 
-    /* Scrollbar */
+    // scrollbar
 
     html {
         scrollbar-width: thin;
@@ -222,6 +222,49 @@ const GlobalStyle = createGlobalStyle`
     .blue {
         color: var(--blue);
     }
+
+    // transition
+
+    .fade-enter {
+        opacity: 0;
+    }
+
+    .fade-enter-active {
+        opacity: 1;
+        transition: opacity 2000ms;
+    }
+
+    .fade-right-enter {
+        opacity: 0;
+        transform: translateX(-40px);
+    }
+
+    .fade-right-enter-active {
+        opacity: 1;
+        transform: translateX(0px);
+        transition: all 2000ms;
+    }
+
+    .fade-down-enter {
+        opacity: 0;
+        transform: translateY(-15px);
+    }
+
+    .fade-down-enter-active {
+        opacity: 1;
+        transform: translateY(0px);
+        transition: all 200ms;
+    }
+
+    // .fade-down-exit {
+    //     opacity: 1;
+    //     transform: translateY(0px);
+    // }
+
+    // .fade-down-exit-active {
+    //     opacity: 0;
+    //     transform: translateY(-15px);
+    // }
 `;
 
 export default GlobalStyle;

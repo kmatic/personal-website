@@ -32,7 +32,7 @@ const Card = styled.div`
 `;
 
 const Info = styled.div`
-    padding: 26px;
+    padding: 24px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -52,7 +52,7 @@ const Technologies = styled.div`
         & > li {
             font-family: var(--mono);
             font-size: var(--sm);
-            padding: 2px 5px;
+            padding: 2px 4px;
             background-color: var(--slate);
             color: var(--blue);
             border-radius: var(--border-radius);

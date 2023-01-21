@@ -1,7 +1,8 @@
 import styled from 'styled-components';
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { RxHamburgerMenu } from 'react-icons/rx';
 import useOutsideChecker from './hooks/useOutsideClick';
+import { CSSTransition } from 'react-transition-group';
 
 const StyledHeader = styled.header`
     height: var(--header-height);
@@ -90,63 +91,71 @@ const HamburgerMenu = styled.div`
 
 const Header = () => {
     const [navOpen, setNavOpen] = useState(false);
+    const [isMounted, setIsMounted] = useState(false);
 
     const navRef = useRef(null);
     useOutsideChecker(navRef, setNavOpen);
 
+    useEffect(() => {
+        setIsMounted(true);
+    }, []);
+
     return (
         <StyledHeader>
-            <StyledNav>
-                <a href="/">KRISTOPHER MATIC</a>
-                <StyledLinks>
-                    <ul>
-                        <li>
-                            <a href="#about" className="stylized-link">
-                                about
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#projects" className="stylized-link">
-                                projects
-                            </a>
-                        </li>
-                    </ul>
-                    <div>
-                        <ResumeLink
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            href="https://www.google.com/"
-                        >
-                            Resume
-                        </ResumeLink>
-                    </div>
-                </StyledLinks>
-                <Hamburger ref={navRef}>
-                    <div className="icon" onClick={() => setNavOpen((prev) => !prev)}>
-                        <RxHamburgerMenu />
-                    </div>
-                    <HamburgerMenu
-                        style={navOpen ? { display: 'flex' } : { display: 'none' }}
-                        onClick={() => setNavOpen(false)}
-                    >
-                        <a href="#about" className="stylized-link">
-                            about
-                        </a>
-
-                        <a href="#projects" className="stylized-link">
-                            projects
-                        </a>
-                        <a
-                            href="https://www.google.com/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="stylized-link"
-                        >
-                            resume
-                        </a>
-                    </HamburgerMenu>
-                </Hamburger>
-            </StyledNav>
+            <CSSTransition in={isMounted} timeout={2000} classNames="fade">
+                <StyledNav>
+                    <a href="/">KRISTOPHER MATIC</a>
+                    <StyledLinks>
+                        <ul>
+                            <li>
+                                <a href="#about" className="stylized-link">
+                                    about
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#projects" className="stylized-link">
+                                    projects
+                                </a>
+                            </li>
+                        </ul>
+                        <div>
+                            <ResumeLink
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                href="https://www.google.com/"
+                            >
+                                Resume
+                            </ResumeLink>
+                        </div>
+                    </StyledLinks>
+                    <Hamburger ref={navRef}>
+                        <div className="icon" onClick={() => setNavOpen((prev) => !prev)}>
+                            <RxHamburgerMenu />
+                        </div>
+                        <CSSTransition in={navOpen} timeout={2000} classNames="fade-down">
+                            <HamburgerMenu
+                                style={navOpen ? { display: 'flex' } : { display: 'none' }}
+                                onClick={() => setNavOpen(false)}
+                            >
+                                <a href="#about" className="stylized-link">
+                                    about
+                                </a>
+                                <a href="#projects" className="stylized-link">
+                                    projects
+                                </a>
+                                <a
+                                    href="https://www.google.com/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="stylized-link"
+                                >
+                                    resume
+                                </a>
+                            </HamburgerMenu>
+                        </CSSTransition>
+                    </Hamburger>
+                </StyledNav>
+            </CSSTransition>
         </StyledHeader>
     );
 };
