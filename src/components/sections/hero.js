@@ -70,7 +70,7 @@ const Hero = () => {
             <TransitionGroup component={null}>
                 {isMounted && (
                     <>
-                        <CSSTransition in={isMounted} timeout={500} classNames="fade-right">
+                        <CSSTransition in={isMounted} timeout={1000} classNames="fade-right">
                             <div>
                                 <h2 className="blue">Hey, I'm</h2>
                                 <h1>Kristopher Matic.</h1>

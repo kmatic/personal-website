@@ -101,7 +101,7 @@ const Header = () => {
         <StyledHeader>
             <TransitionGroup component={null}>
                 {isMounted && (
-                    <CSSTransition timeout={500} classNames="fade">
+                    <CSSTransition timeout={1000} classNames="fade">
                         <StyledNav>
                             <a href="/">KRISTOPHER MATIC</a>
                             <StyledLinks>

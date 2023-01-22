@@ -32,7 +32,7 @@ const Footer = () => {
     return (
         <TransitionGroup component={null}>
             {isMounted && (
-                <CSSTransition timeout={500} classNames="fade">
+                <CSSTransition timeout={1000} classNames="fade">
                     <StyledFooter>
                         <div>
                             <a

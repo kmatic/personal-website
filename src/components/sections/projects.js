@@ -50,7 +50,7 @@ const Projects = () => {
     return (
         <TransitionGroup component={null}>
             {isMounted && (
-                <CSSTransition timeout={500} classNames="fade">
+                <CSSTransition timeout={1000} classNames="fade">
                     <StyledSection id="projects">
                         <h1 className="stylized-heading">Projects</h1>
                         <ProjectsContainer>

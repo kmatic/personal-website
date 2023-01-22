@@ -53,7 +53,7 @@ const About = () => {
     return (
         <TransitionGroup component={null}>
             {isMounted && (
-                <CSSTransition timeout={500} classNames="fade">
+                <CSSTransition timeout={1000} classNames="fade">
                     <StyledSection id="about">
                         <h1 className="stylized-heading">About Me</h1>
                         <AboutContainer>

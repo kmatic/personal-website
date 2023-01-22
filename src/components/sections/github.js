@@ -37,7 +37,7 @@ const Github = () => {
     return (
         <TransitionGroup component={null}>
             {isMounted && (
-                <CSSTransition in={isMounted} timeout={500} classNames="fade">
+                <CSSTransition in={isMounted} timeout={1000} classNames="fade">
                     <StyledSection>
                         <h1>Want to see more?</h1>
                         <p>

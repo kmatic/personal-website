@@ -231,7 +231,7 @@ const GlobalStyle = createGlobalStyle`
 
     .fade-enter-active {
         opacity: 1;
-        transition: opacity 500ms ease-in;
+        transition: opacity 1000ms;
     }
 
     .fade-right-enter {
@@ -242,7 +242,7 @@ const GlobalStyle = createGlobalStyle`
     .fade-right-enter-active {
         opacity: 1;
         transform: translateX(0px);
-        transition: all 500ms ease-in;
+        transition: all 1000ms;
     }
 
     .fade-down-enter {

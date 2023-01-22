@@ -1,54 +1,46 @@
-<p align="center">
-  <a href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
-  </a>
-</p>
-<h1 align="center">
-  Gatsby minimal starter
-</h1>
+# Personal website
 
-## 🚀 Quick start
+My personal website built with Gatsby, View it at [kristophermatic.com](https://kristophermatic.com/)
 
-1.  **Create a Gatsby site.**
+Greatly inspired by [Brittany Chiang](https://github.com/bchiang7/v4). Please check out her amazing website!
 
-    Use the Gatsby CLI to create a new site, specifying the minimal starter.
+![](content/projects/PersonalWebsite/personalwebsite.png)
 
-    ```shell
-    # create a new Gatsby site using the minimal starter
-    npm init gatsby
-    ```
+## Built with
 
-2.  **Start developing.**
+-   [Gatsby](https://www.gatsbyjs.com/)
+-   [styled-components](https://styled-components.com/)
+-   [GraphQL](https://graphql.org/)
+-   [React Icons](https://react-icons.github.io/react-icons/)
+-   [React Transition Group](https://github.com/reactjs/react-transition-group)
 
-    Navigate into your new site’s directory and start it up.
+## Reflection
 
-    ```shell
-    cd my-gatsby-site/
-    npm run develop
-    ```
+Gatsby was chosen for static-site generation. This is my very first portfolio website and I took great inspiration in building it. With this project I made sure to create a set of global css styles and variables that would help in reducing redundancy in my styled components. This also helped in the general layout of the webpage which is something I have neglected in previous projects. This would also prove beneficial when designing for responsiveness later on. GraphQL was used to query for data obtained in the filesystem (MDX & png format). This was then used to populate data in the projects cards which will provide ease in future updates.
 
-3.  **Open the code and start customizing!**
+## Running locally
 
-    Your site is now running at http://localhost:8000!
+1. Install the Gatsby CLI
 
-    Edit `src/pages/index.js` to see your site update in real-time!
+```
+npm install -g gatsby-cli
+```
 
-4.  **Learn more**
+2. Clone the repo
 
-    - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+```
+git clone https://github.com/kmatic/personal-website
+```
 
-    - [Tutorials](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+3. Navigate to folder and install npm packages
 
-    - [Guides](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+```
+cd personal-website
+npm install
+```
 
-    - [API Reference](https://www.gatsbyjs.com/docs/api-reference/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+4. Run the development server
 
-    - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-## 🚀 Quick start (Gatsby Cloud)
-
-Deploy this starter with one click on [Gatsby Cloud](https://www.gatsbyjs.com/cloud/):
-
-[<img src="https://www.gatsbyjs.com/deploynow.svg" alt="Deploy to Gatsby Cloud">](https://www.gatsbyjs.com/dashboard/deploynow?url=https://github.com/gatsbyjs/gatsby-starter-minimal)
+```
+npm start
+```

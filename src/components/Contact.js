@@ -53,7 +53,7 @@ const Contact = () => {
         <Wrapper>
             <TransitionGroup component={null}>
                 {isMounted && (
-                    <CSSTransition timeout={500} classNames="fade">
+                    <CSSTransition timeout={1000} classNames="fade">
                         <StyledContact>
                             <a href={github} target="_blank" rel="noopener noreferrer">
                                 <FiGithub />
