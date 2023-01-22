@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import styled, { keyframes } from 'styled-components';
 import { RxDoubleArrowDown } from 'react-icons/rx';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import useIsMounted from '../hooks/useIsMounted';
 
 const StyledSection = styled.section`
     min-height: calc(100vh - var(--header-height));
@@ -62,17 +63,14 @@ const AnimationDiv = styled.div`
 `;
 
 const Hero = () => {
-    const [isMounted, setIsMounted] = useState(false);
+    const isMounted = useIsMounted();
 
-    useEffect(() => {
-        setIsMounted(true);
-    });
     return (
         <StyledSection>
             <TransitionGroup component={null}>
                 {isMounted && (
                     <>
-                        <CSSTransition in={isMounted} timeout={1500} classNames="fade-right">
+                        <CSSTransition in={isMounted} timeout={500} classNames="fade-right">
                             <div>
                                 <h2 className="blue">Hey, I'm</h2>
                                 <h1>Kristopher Matic.</h1>
@@ -83,7 +81,7 @@ const Hero = () => {
                                 </p>
                             </div>
                         </CSSTransition>
-                        <CSSTransition in={isMounted} timeout={1500} classNames="fade">
+                        <CSSTransition in={isMounted} timeout={500} classNames="fade">
                             <AnimationDiv>
                                 <a href="#about">
                                     <RxDoubleArrowDown />

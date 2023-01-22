@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import { FiGithub } from 'react-icons/fi';
+import useIsMounted from './hooks/useIsMounted';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 const StyledFooter = styled.footer`
     margin-top: auto;
@@ -25,18 +27,33 @@ const StyledFooter = styled.footer`
 `;
 
 const Footer = () => {
-    return (
-        <StyledFooter>
-            <div>
-                <a href="https://github.com/kmatic" target="_blank" rel="noopener noreferrer">
-                    kmatic <FiGithub />
-                </a>
+    const isMounted = useIsMounted();
 
-                <a href="https://github.com/bchiang7/v4" target="_blank" rel="noopener noreferrer">
-                    inspired by bchiang7
-                </a>
-            </div>
-        </StyledFooter>
+    return (
+        <TransitionGroup component={null}>
+            {isMounted && (
+                <CSSTransition timeout={500} classNames="fade">
+                    <StyledFooter>
+                        <div>
+                            <a
+                                href="https://github.com/kmatic"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                kmatic <FiGithub />
+                            </a>
+                            <a
+                                href="https://github.com/bchiang7/v4"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                inspired by bchiang7
+                            </a>
+                        </div>
+                    </StyledFooter>
+                </CSSTransition>
+            )}
+        </TransitionGroup>
     );
 };
 

@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
+import useIsMounted from '../hooks/useIsMounted';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 const StyledSection = styled.section`
     max-width: 650px;
@@ -30,19 +32,31 @@ const StyledSection = styled.section`
 `;
 
 const Github = () => {
+    const isMounted = useIsMounted();
+
     return (
-        <StyledSection>
-            <h1>Want to see more?</h1>
-            <p>
-                Check out my github below for all the projects I have worked on throughout my
-                self-taught journey. It will also include any future ones as I will not always keep
-                this website updated. If you would like to contact me feel free to reach out at any
-                of my socials.
-            </p>
-            <a href="https://github.com/kmatic" target="_blank" rel="noopener noreferrer">
-                view my github
-            </a>
-        </StyledSection>
+        <TransitionGroup component={null}>
+            {isMounted && (
+                <CSSTransition in={isMounted} timeout={500} classNames="fade">
+                    <StyledSection>
+                        <h1>Want to see more?</h1>
+                        <p>
+                            Check out my github below for all the projects I have worked on
+                            throughout my self-taught journey. It will also include any future ones
+                            as I will not always keep this website updated. If you would like to
+                            contact me feel free to reach out at any of my socials.
+                        </p>
+                        <a
+                            href="https://github.com/kmatic"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            view my github
+                        </a>
+                    </StyledSection>
+                </CSSTransition>
+            )}
+        </TransitionGroup>
     );
 };
 

@@ -2,6 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import ProjectCard from './projectCard';
 import { graphql, useStaticQuery } from 'gatsby';
+import useIsMounted from '../hooks/useIsMounted';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 const StyledSection = styled.section`
     max-width: 1150px;
@@ -43,15 +45,23 @@ const Projects = () => {
         }
     `);
 
+    const isMounted = useIsMounted();
+
     return (
-        <StyledSection id="projects">
-            <h1 className="stylized-heading">Projects</h1>
-            <ProjectsContainer>
-                {data.allMdx.nodes.map((project) => (
-                    <ProjectCard key={project.frontmatter.name} project={project} />
-                ))}
-            </ProjectsContainer>
-        </StyledSection>
+        <TransitionGroup component={null}>
+            {isMounted && (
+                <CSSTransition timeout={500} classNames="fade">
+                    <StyledSection id="projects">
+                        <h1 className="stylized-heading">Projects</h1>
+                        <ProjectsContainer>
+                            {data.allMdx.nodes.map((project) => (
+                                <ProjectCard key={project.frontmatter.name} project={project} />
+                            ))}
+                        </ProjectsContainer>
+                    </StyledSection>
+                </CSSTransition>
+            )}
+        </TransitionGroup>
     );
 };
 

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { FiGithub, FiLinkedin, FiMail } from 'react-icons/fi';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import useIsMounted from './hooks/useIsMounted';
 
 const StyledContact = styled.div`
     display: flex;
@@ -42,20 +43,17 @@ const Wrapper = styled.div`
 `;
 
 const Contact = () => {
-    const [isMounted, setIsMounted] = useState(false);
+    const isMounted = useIsMounted();
 
     const email = 'kristophermatic7@gmail.com';
     const github = 'https://github.com/kmatic';
     const linkedin = 'https://www.linkedin.com/in/kristopher-matic/';
 
-    useEffect(() => {
-        setIsMounted(true);
-    }, []);
     return (
         <Wrapper>
             <TransitionGroup component={null}>
                 {isMounted && (
-                    <CSSTransition timeout={1500} classNames="fade">
+                    <CSSTransition timeout={500} classNames="fade">
                         <StyledContact>
                             <a href={github} target="_blank" rel="noopener noreferrer">
                                 <FiGithub />

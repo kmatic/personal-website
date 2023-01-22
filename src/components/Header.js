@@ -1,8 +1,9 @@
 import styled from 'styled-components';
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef } from 'react';
 import { RxHamburgerMenu } from 'react-icons/rx';
 import useOutsideChecker from './hooks/useOutsideClick';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import useIsMounted from './hooks/useIsMounted';
 
 const StyledHeader = styled.header`
     height: var(--header-height);
@@ -91,20 +92,16 @@ const HamburgerMenu = styled.div`
 
 const Header = () => {
     const [navOpen, setNavOpen] = useState(false);
-    const [isMounted, setIsMounted] = useState(false);
+    const isMounted = useIsMounted();
 
     const navRef = useRef(null);
     useOutsideChecker(navRef, setNavOpen);
-
-    useEffect(() => {
-        setIsMounted(true);
-    }, []);
 
     return (
         <StyledHeader>
             <TransitionGroup component={null}>
                 {isMounted && (
-                    <CSSTransition timeout={2000} classNames="fade">
+                    <CSSTransition timeout={500} classNames="fade">
                         <StyledNav>
                             <a href="/">KRISTOPHER MATIC</a>
                             <StyledLinks>
