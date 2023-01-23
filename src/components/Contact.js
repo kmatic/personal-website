@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { FiGithub, FiLinkedin, FiMail } from 'react-icons/fi';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';

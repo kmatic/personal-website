@@ -4,7 +4,10 @@
 module.exports = {
     siteMetadata: {
         title: `Kristopher Matic`,
-        siteUrl: `https://www.yourdomain.tld`,
+        siteUrl: `https://kristophermatic.com`,
+        description: `Personal website for Kristopher Matic`,
+        twitterUsername: `@krismatic7`,
+        image: `/preview.png`,
     },
     plugins: [
         'gatsby-plugin-styled-components',

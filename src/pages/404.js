@@ -1,7 +1,9 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import { Layout } from '../components';
+import { Layout, Seo } from '../components';
 import styled from 'styled-components';
+import useIsMounted from '../components/hooks/useIsMounted';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 const StyledSection = styled.section`
     min-height: calc(100vh - var(--header-height));
@@ -33,14 +35,22 @@ const StyledLink = styled(Link)`
 `;
 
 const NotFoundPage = () => {
+    const isMounted = useIsMounted();
+
     return (
         <Layout>
             <main>
-                <StyledSection>
-                    <h1>404</h1>
-                    <h1>NOT FOUND</h1>
-                    <StyledLink to="/">Go Home</StyledLink>
-                </StyledSection>
+                <TransitionGroup component={null}>
+                    {isMounted && (
+                        <CSSTransition timeout={1000} classNames="fade">
+                            <StyledSection>
+                                <h1>404</h1>
+                                <h1>NOT FOUND</h1>
+                                <StyledLink to="/">Go Home</StyledLink>
+                            </StyledSection>
+                        </CSSTransition>
+                    )}
+                </TransitionGroup>
             </main>
         </Layout>
     );
@@ -48,4 +58,4 @@ const NotFoundPage = () => {
 
 export default NotFoundPage;
 
-export const Head = () => <title>404 | Not found</title>;
+export const Head = () => <Seo title="404 Not Found" />;
