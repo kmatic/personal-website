@@ -64,6 +64,7 @@ const Description = styled.div`
     p {
         margin-top: 15px;
         font-size: var(--md);
+        color: var(--lightest-slate);
     }
 `;
 
@@ -72,6 +73,7 @@ const Links = styled.div`
         margin: 0 15px 0 0;
         font-size: var(--xl);
         transition: var(--transition);
+        color: var(--lightest-slate);
 
         &:hover {
             color: var(--blue);

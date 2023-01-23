@@ -1,13 +1,16 @@
 import { createGlobalStyle, css } from 'styled-components';
+import '@fontsource/open-sans';
+import '@fontsource/roboto-mono';
 
 const variables = css`
     :root {
         --white: white;
         --blue: #38bdf8;
         --blue-highlight: rgba(56, 189, 248, 0.2);
-        --slate: #1e293b;
+        --slate: #1e293b; // tailwind color palette
         --lighter-slate: #334155;
-        --light-slate: #94a3b8;
+        --light-slate: #94a3b8; // this is lighter than lighter-slate above
+        --lightest-slate: #cbd5e1;
         --gray: #374151;
 
         --xs: 12px;
