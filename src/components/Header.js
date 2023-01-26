@@ -121,7 +121,7 @@ const Header = () => {
                                     <ResumeLink
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        href="https://www.google.com/"
+                                        href="/resume.pdf"
                                     >
                                         Resume
                                     </ResumeLink>
