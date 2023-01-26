@@ -71,7 +71,7 @@ const About = () => {
                                         target="_blank"
                                         rel="noopener noreferrer"
                                     >
-                                        famous CS50
+                                        famous CS50 course
                                     </a>
                                     . Interested in the underlying technologies of the web, I have
                                     decided to pursue software development.

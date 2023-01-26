@@ -16,7 +16,7 @@ Greatly inspired by [Brittany Chiang](https://github.com/bchiang7/v4). Please ch
 
 ## Reflection
 
-Gatsby was chosen for static-site generation. This is my very first portfolio website and I took great inspiration in building it. With this project I made sure to create a set of global css styles and variables that would help in reducing redundancy in my styled components. This also helped in the general layout of the webpage which is something I have neglected in previous projects. This would also prove beneficial when designing for responsiveness later on. GraphQL was used to query for data obtained in the filesystem (MDX & png format). This was then used to populate data in the projects cards which will provide ease in future updates.
+Gatsby was chosen for static-site generation. This is my very first portfolio website and I took great inspiration in building it. With this project I made sure to create a set of global css styles and variables that would help in reducing redundancy in my styled components. This also helped in the general layout of the webpage which is something I have neglected in previous projects. This would also prove beneficial when designing for responsiveness later on. GraphQL was used to query for data obtained in the filesystem (MDX & png format). This was then used to populate data in the projects cards which will provide ease in future updates. This project is also the first time I have taken the result of lighthouse audit and worked to improve them. I improved performance by self-hosting fonts, corrected below standard contrast ratios, and added an SEO component. I also added a web manifest and a service worker for PWA standards.
 
 ## Running locally
 

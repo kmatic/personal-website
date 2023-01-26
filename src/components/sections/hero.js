@@ -76,8 +76,8 @@ const Hero = () => {
                                 <h1>Kristopher Matic.</h1>
                                 <p>
                                     I'm a mechanical engineer turned full-stack developer from
-                                    Vancouver, Canada. Currently, I'm focused on further improving
-                                    my skills in my chosen tech stack (MERN).
+                                    Vancouver, Canada. I'm currently focused on broadening my skills
+                                    in various web technologies.
                                 </p>
                             </div>
                         </CSSTransition>
