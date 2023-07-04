@@ -143,7 +143,7 @@ const Header = () => {
                                             projects
                                         </a>
                                         <a
-                                            href="https://www.google.com/"
+                                            href="/resume.pdf"
                                             target="_blank"
                                             rel="noopener noreferrer"
                                             className="stylized-link"
